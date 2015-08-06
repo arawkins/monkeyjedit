@@ -1,4 +1,6 @@
 # monkeyjedit
+Some tools to add [Monkey language](http://monkey-x.com/) support to the [jEdit editor](http://jedit.org).
+
 To install these tools, you'll need to locate the jEdit settings directory on your system (please see http://jedit.org/users-guide/settings-directory.html for details). The instructions below assume you've found your settings folder. 
 
 ## Syntax highlighting
@@ -6,8 +8,10 @@ Syntax highlighting currently supports only the basic language (ie. Mojo keyword
 
 ### Installation
 1. Copy /modes/monkey.xml into the /modes folder in your jEdit settings directory. 
-2. In your jEdit settings directory, edit /modes/catalog and add the following line:
-   <MODE NAME="monkey" FILE="Monkey.xml" FILE_NAME_GLOB="*.monkey*" />
+2. In your jEdit settings directory, edit /modes/catalog and add the following line under `<MODES>`:
+ 
+
+   `<MODE NAME="monkey" FILE="Monkey.xml" FILE_NAME_GLOB="*.monkey*" />`
 
 You should now have monkey syntax highlighting! Check out http://jedit.org/users-guide/installing-modes.html for more details on installing and editing editing modes in jEdit.
 

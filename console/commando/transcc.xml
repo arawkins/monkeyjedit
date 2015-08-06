@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE COMMANDO SYSTEM "commando.dtd">
+
+<COMMANDO>
+    
+    <UI>
+    
+        <CAPTION LABEL="General">
+                        
+            <FILE_ENTRY LABEL="Path to transcc" VARNAME="monkeyTrans" />
+            
+            <FILE_ENTRY LABEL="Target Monkey File" VARNAME="monkeyFile" EVAL="buffer.getPath()" />
+            
+            <CHOICE LABEL="Action" VARNAME="monkeyAction" DEFAULT="run">
+                <OPTION LABEL="Run" VALUE="run" />
+                <OPTION LABEL="Build" VALUE="build" />
+                <OPTION LABEL="Clean" VALUE="clean" />
+                <OPTION LABEL="Update" VALUE="update" />
+            </CHOICE>
+                
+            
+            <CHOICE LABEL="Target" VARNAME="monkeyTarget"
+               DEFAULT="Html5_Game">
+               <OPTION LABEL="HTML5" VALUE="Html5_Game" />
+               <OPTION LABEL="C++ Tool" VALUE="C++_Tool" />
+               <OPTION LABEL="Flash" VALUE="Flash_Game" />
+               <OPTION LABEL="Desktop (GLFW2)" VALUE="Desktop_Game_\(Glfw2\)" />
+               <OPTION LABEL="Desktop (GLFW3)" VALUE="Desktop_Game_\(Glfw2\)" />
+            </CHOICE>
+            
+            <CHOICE LABEL="Config" VARNAME="monkeyConfig" DEFAULT="release">
+                <OPTION LABEL="Debug" VALUE="debug" />
+                <OPTION LABEL="Release" VALUE="release" />
+            </CHOICE>
+            
+            
+        </CAPTION>
+        
+        <CAPTION LABEL="Optional">
+            
+            <DIR_ENTRY LABEL="Monkey Module Folder" VARNAME="monkeyModuleDir" />
+            
+        </CAPTION>
+        
+    </UI>
+    
+    <COMMANDS>
+        <COMMAND CONFIRM="FALSE" SHELL="System">
+            
+            buf = new StringBuffer(monkeyTrans);
+            
+            buf.append(" -" + monkeyAction);
+            
+            if (!monkeyConfig.equals("")) {
+                buf.append(" -config=" + monkeyConfig);
+            } else {
+                buf.append(" -config=release");
+            }
+            
+            if (!monkeyTarget.equals("")) {
+                buf.append(" -target=" + monkeyTarget);
+            } 
+            
+            
+            
+            if(!monkeyModuleDir.equals("")) {
+                buf.append(" -modpath="+monkeyModuleDir);
+            }
+            
+            if(!monkeyFile.equals("")) {
+                buf.append(" " + monkeyFile);
+            } else {
+                buf.append(" " + buffer.getPath());
+            }
+            
+            buf;
+            
+        </COMMAND>
+        
+    
+    </COMMANDS>
+</COMMANDO>

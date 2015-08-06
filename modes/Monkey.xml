@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<!DOCTYPE MODE SYSTEM "xmode.dtd">
+<MODE>
+
+    <PROPS>
+        <PROPERTY NAME="commentStart" VALUE="#Rem" />
+        <PROPERTY NAME="commentEnd" VALUE="#End" />
+        <PROPERTY NAME="lineComment" VALUE="'" />
+        
+        <PROPERTY NAME="indentNextLines"
+    	   VALUE="^\s*(Class|Method|Function|If|While|Select|For)\b.+$" />
+        
+    	<PROPERTY NAME="unindentThisLine"
+            VALUE="^\s*(End|Wend|Next|Continue|EndIf|End\s.+)\b$" />
+            
+        <PROPERTY NAME="unindentNextLines"
+            VALUE="^\s*(End|Wend|Next|Continue|EndIf|End\s.+)\b$" />
+            
+        <PROPERTY NAME="electricKeys" VALUE="&#xA;" />
+        
+        <PROPERTY NAME="doubleBracketIndent" VALUE="true" />
+        <PROPERTY NAME="lineUpClosingBracket" VALUE="false" />
+        
+    </PROPS>
+    
+    <RULES ESCAPE="\" HIGHLIGHT_DIGITS="TRUE" IGNORE_CASE="FALSE">
+    
+        
+        <SPAN TYPE="COMMENT1">
+            <BEGIN>#Rem</BEGIN>
+            <END>#End</END>
+        </SPAN>
+        
+        <EOL_SPAN TYPE="COMMENT1">'</EOL_SPAN>
+        
+        <SPAN TYPE="LITERAL1" ESCAPE="\" NO_LINE_BREAK="TRUE">
+			<BEGIN>"</BEGIN>
+			<END>"</END>
+		</SPAN>
+		
+		<SPAN TYPE="LITERAL1" ESCAPE="\" NO_LINE_BREAK="TRUE">
+			<BEGIN>'</BEGIN>
+			<END>'</END>
+		</SPAN>
+		
+        <SEQ TYPE="OPERATOR">+</SEQ>
+        <SEQ TYPE="OPERATOR">-</SEQ>
+        <SEQ TYPE="OPERATOR">/</SEQ>
+        <SEQ TYPE="OPERATOR">*</SEQ>
+        <SEQ TYPE="OPERATOR">=</SEQ>
+		<SEQ TYPE="OPERATOR">&gt;=</SEQ>
+		<SEQ TYPE="OPERATOR">&lt;=</SEQ>
+		<SEQ TYPE="OPERATOR">&gt;</SEQ>
+		<SEQ TYPE="OPERATOR">&lt;</SEQ>
+		<SEQ TYPE="OPERATOR">?</SEQ>
+		<SEQ TYPE="OPERATOR">:</SEQ>
+		
+		<!-- Function calls -->
+		<MARK_PREVIOUS TYPE="FUNCTION" MATCH_TYPE="OPERATOR">(</MARK_PREVIOUS>
+		<SEQ TYPE="OPERATOR">)</SEQ>
+        
+        <KEYWORDS>
+            <KEYWORD1>If</KEYWORD1>
+            <KEYWORD1>Else</KEYWORD1>
+            <KEYWORD1>ElseIf</KEYWORD1>
+            <KEYWORD1>EndIf</KEYWORD1>
+            <KEYWORD1>Then</KEYWORD1>
+            <KEYWORD1>Repeat</KEYWORD1>
+            <KEYWORD1>Until</KEYWORD1>
+            <KEYWORD1>Forever</KEYWORD1>
+            <KEYWORD1>For</KEYWORD1>
+            <KEYWORD1>To</KEYWORD1>
+            <KEYWORD1>Step</KEYWORD1>
+            <KEYWORD1>Next</KEYWORD1>
+            <KEYWORD1>Return</KEYWORD1>
+            <KEYWORD1>While</KEYWORD1>
+            <KEYWORD1>Wend</KEYWORD1>
+            <KEYWORD1>Void</KEYWORD1>
+            <KEYWORD1>Strict</KEYWORD1>
+            <KEYWORD1>Public</KEYWORD1>
+            <KEYWORD1>Private</KEYWORD1>
+            <KEYWORD1>Property</KEYWORD1>
+            <KEYWORD1>Mod</KEYWORD1>
+            <KEYWORD1>Continue</KEYWORD1>
+            <KEYWORD1>Exit</KEYWORD1>
+            <KEYWORD1>New</KEYWORD1>
+            <KEYWORD1>Try</KEYWORD1>
+            <KEYWORD1>Catch</KEYWORD1>
+            <KEYWORD1>Throw</KEYWORD1>
+            <KEYWORD1>Eachin</KEYWORD1>
+            <KEYWORD1>Extends</KEYWORD1>
+            <KEYWORD1>Abstract</KEYWORD1>
+            <KEYWORD1>Final</KEYWORD1>
+            <KEYWORD1>Select</KEYWORD1>
+            <KEYWORD1>Case</KEYWORD1>
+            <KEYWORD1>Default</KEYWORD1>
+            <KEYWORD1>Inline</KEYWORD1>            
+            <KEYWORD1>Const</KEYWORD1>
+            <KEYWORD1>Int</KEYWORD1>
+            <KEYWORD1>Float</KEYWORD1>
+            <KEYWORD1>String</KEYWORD1>
+            <KEYWORD1>Array</KEYWORD1>
+            <KEYWORD1>Object</KEYWORD1>
+            <KEYWORD1>Local</KEYWORD1>
+            <KEYWORD1>Global</KEYWORD1>
+            <KEYWORD1>Field</KEYWORD1>
+            <KEYWORD1>Method</KEYWORD1>
+            <KEYWORD1>Function</KEYWORD1>
+            <KEYWORD1>Class</KEYWORD1>
+            <KEYWORD1>End</KEYWORD1>
+            <KEYWORD1>Enum</KEYWORD1>
+            <KEYWORD1>Struct</KEYWORD1>
+            <KEYWORD1>Operator</KEYWORD1>
+            
+            <KEYWORD3>Module</KEYWORD3>
+            <KEYWORD3>Interface</KEYWORD3>
+            <KEYWORD3>Implements</KEYWORD3>
+            <KEYWORD3>Import</KEYWORD3>
+            <KEYWORD3>Using</KEYWORD3>
+            
+            <!-- Math Functions -->
+			<KEYWORD2>ATan</KEYWORD2>
+			<KEYWORD2>Cos</KEYWORD2>
+			<KEYWORD2>Sin</KEYWORD2>
+			<KEYWORD2>Tan</KEYWORD2>
+			<KEYWORD2>Exp</KEYWORD2>
+			<KEYWORD2>Log</KEYWORD2>
+			<KEYWORD2>Sqrt</KEYWORD2>
+			<KEYWORD2>Rnd</KEYWORD2>
+
+			<!-- Rounding -->
+			<KEYWORD2>Abs</KEYWORD2>
+			<KEYWORD2>Round</KEYWORD2>
+            
+            <LITERAL2>Null</LITERAL2>
+            <LITERAL2>Super</LITERAL2>
+            <LITERAL2>True</LITERAL2>
+            <LITERAL2>False</LITERAL2>
+            <LITERAL2>Self</LITERAL2>
+            <LITERAL2>And</LITERAL2>
+            <LITERAL2>Or</LITERAL2>
+        </KEYWORDS>
+    </RULES>
+
+</MODE>

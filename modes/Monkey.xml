@@ -7,14 +7,14 @@
         <PROPERTY NAME="commentEnd" VALUE="#End" />
         <PROPERTY NAME="lineComment" VALUE="'" />
         
-        <PROPERTY NAME="indentNextLines"
+        <PROPERTY NAME="indentNextLines"     
     	   VALUE="^\s*(Class|Method|Function|If|While|Select|For)\b.+$" />
         
     	<PROPERTY NAME="unindentThisLine"
-            VALUE="^\s*(End|Wend|Next|Continue|EndIf|End\s.+)\b$" />
+            VALUE="^\s*(Else|ElseIf|End|Then|Wend|Next|Continue|EndIf|End\s.*)\b.*$" />
             
         <PROPERTY NAME="unindentNextLines"
-            VALUE="^\s*(End|Wend|Next|Continue|EndIf|End\s.+)\b$" />
+            VALUE="^\s*(End|Wend|If\s.+Then|Next|Continue|EndIf|End\s.+)\b$" />
             
         <PROPERTY NAME="electricKeys" VALUE="&#xA;" />
         

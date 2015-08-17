@@ -7,7 +7,7 @@ To install these tools, you'll need to locate the jEdit settings directory on yo
 Syntax highlighting currently supports only the basic language (ie. Mojo keywords are not included). There is also some preliminary support for Monkey 2 keywords (Enum, Struct, etc...)
 
 ### Installation
-1. Copy /modes/monkey.xml into the /modes folder in your jEdit settings directory. 
+1. Copy /modes/Monkey.xml into the /modes folder in your jEdit settings directory. 
 2. In your jEdit settings directory, edit /modes/catalog and add the following line under `<MODES>`:
  
 
